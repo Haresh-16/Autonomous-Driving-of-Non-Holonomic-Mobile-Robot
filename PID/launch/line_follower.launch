@@ -1,0 +1,37 @@
+<launch>
+   
+
+    <!--
+	NECESSARY PARAMS:
+
+    -->
+    <arg name="plan_topic" default="/pose_array_topic" />
+     <!-- plan_topic default /planner_node/car_plan-->
+    <arg name="pose_topic" default="/pf/viz/inferred_pose" />
+    <arg name="plan_lookahead" default="7" />
+    <arg name="translation_weight" default="1.0" />
+    <arg name="rotation_weight" default="0.0" />
+    <arg name="kp" default="1.0" />
+    <arg name="ki" default="0.0" />
+    <arg name="kd" default="0.0" />
+    <arg name="error_buff_length" default="10" />
+    <arg name="speed" default="1.0" />
+
+
+   <!--
+	Launch a line_follower node here
+   -->
+   <node pkg="assignment3" type="line_follower.py" name="line_follower" output="screen">
+      <param name="plan_topic" value="$(arg plan_topic)" />
+      <param name="pose_topic" value="$(arg pose_topic)" />
+      <param name="plan_lookahead" value="$(arg plan_lookahead)" />
+      <param name="translation_weight" value="$(arg translation_weight)" />
+      <param name="rotation_weight" value="$(arg rotation_weight)" />
+      <param name="kp" value="$(arg kp)" />
+      <param name="ki" value="$(arg ki)" />
+      <param name="kd" value="$(arg kd)" />
+      <param name="error_buff_length" value="$(arg error_buff_length)" />
+      <param name="speed" value="$(arg speed)" />
+   </node>
+
+</launch>

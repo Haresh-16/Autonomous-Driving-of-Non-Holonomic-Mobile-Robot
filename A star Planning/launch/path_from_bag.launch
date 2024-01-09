@@ -1,0 +1,7 @@
+<launch>
+    <!-- Node -->
+    <node pkg="planner" type="bagPub.py" name="bagPub" output="screen">
+        <!-- You can add parameters here if needed -->
+    </node>
+</launch>
+

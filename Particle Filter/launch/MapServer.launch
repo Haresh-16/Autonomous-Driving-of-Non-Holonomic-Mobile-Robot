@@ -1,0 +1,4 @@
+<launch>
+    <arg name="map" default="$(find assignment4)/maps/sieg_floor3.yaml"/>
+    <node pkg="assignment4" name="map_server" type="map_server" args="$(arg map)" />
+</launch>

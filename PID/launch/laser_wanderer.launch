@@ -1,0 +1,34 @@
+<launch>
+   
+
+    <!--
+	NECESSARY PARAMS:
+
+    -->
+
+    <arg name="speed" default="0.5" />
+    <arg name="min_delta" default="-0.341" />
+    <arg name="max_delta" default="0.34" />
+    <arg name="delta_incr" default="0.1133" />
+    <arg name="dt" default="0.01" />
+    <arg name="T" default="300" />
+    <arg name="compute_time" default="0.09" />
+    <arg name="laser_offset" default="2.0" />
+
+
+
+   <!--
+	Launch a line_follower node here
+   -->
+   <node pkg="assignment3" type="laser_wanderer.py" name="laser_wanderer" output="screen">
+      <param name="speed" value="$(arg speed)" />
+      <param name="min_delta" value="$(arg min_delta)" />
+      <param name="max_delta" value="$(arg max_delta)" />
+      <param name="delta_incr" value="$(arg delta_incr)" />
+      <param name="dt" value="$(arg dt)" />
+      <param name="T" value="$(arg T)" />
+      <param name="compute_time" value="$(arg compute_time)" />
+      <param name="laser_offset" value="$(arg laser_offset)" />
+   </node>
+
+</launch>

@@ -1,0 +1,11 @@
+<launch>
+
+	<node pkg="planner" type="Planner.py" name="PlannerNode" output="screen">
+        <param name="static_map" type="string" value="static_map" />
+        <param name="halton_points" type="int" value="500" />
+        <param name="disc_radius" type="int" value="10" />
+        <param name="collision_delta" type="double" value="0.15" />
+        <param name="pub_topic" type="string" value="planner_node/car_plan" />
+	</node>
+
+</launch>
